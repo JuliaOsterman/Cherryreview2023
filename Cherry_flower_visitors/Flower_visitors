@@ -1,1 +1,139 @@
+library("tidyr") 
+library ("ggplot2")
+library("dplyr")
+library("tidyverse")
+library("scales")
+library("viridis")
+library("ggh4x")
+
+
+# rm(list = ls())
+setwd("E:/JuliaBackUP20210927/PostDocGothenburg/Cherryreview")
+
+# LOAD DATA
+Data_rel_abundance_insect <- read.csv("Cherry_relativeabundance_cherry_allinsects.csv", sep = ";")
+Data_rel_abundance_beegenus <- read.csv("Relative_abundance_cherry_beegenus.csv", sep = ";")
+Data_richness <- read.csv("Species_richness_flower_overview.csv", sep = ";")
+
+# TRANSFORM DATA FROM WIDE TO LONG FORMAT
+
+elongation_long <- gather(Data_rel_abundance_insect, Group, rel_abundance,                
+                          c(Honeybees, Bombus, Other_Wildbees, Other.insects, Flies)) 
+
+elongation_beegenus <- gather(Data_rel_abundance_beegenus, Group, rel_abundance,                           
+                              c(5:25))  
+
+# ADD BEE FAMILY 
+
+elongation_beegenus$family <- elongation_beegenus$Group
+
+elongation_beegenus <- elongation_beegenus %>%
+  mutate(family = recode(family, Bombus = 'Apidae' , Amegilla = 'Apidae', Agapostemon = 'Halictidae', Andrena = 'Andrenidae' , 
+                         Anthophora = 'Apidae' , Augochlora = 'Halictidae' , Augochlorella = 'Halictidae',
+                         Ceratina = 'Apidae' , Colletes = 'Colletidae' , Eucera = 'Apidae', Habropoda = 'Apidae' ,
+                         Halictus = 'Halictidae' , Heriades = 'Megachilidae', Lasioglossum = 'Halictidae', 
+                         Megachile = 'Megachilidae', Nomada = 'Apidae', Osmia = 'Megachilidae', Rhodanthidium = 'Megachilidae',
+                         Sphecodes = 'Halictidae', Xylocopa = 'Apidae'))
+
+
+# FIGURE 5A
+(Rel_abund_all <- ggplot(data=elongation_long, aes(y = rel_abundance, x = Group)) +
+  geom_point(data=elongation_long, aes(y = rel_abundance, x = Group, col = Sweet.sour), alpha = 0.5,
+             position = position_jitter(width = 0.15, height = 0.01), size = 2.5) +
+  scale_color_manual(values = c("darkorange", "red4"))+
+  stat_summary(fun.min = function(z) { mean(z) - (sd(z)/sqrt(length(z))) },
+               fun.max = function(z) { mean(z) + (sd(z)/sqrt(length(z))) },
+               fun = mean,size =0.4,
+               col = "black", position = position_dodge(width = 0.75)) +
+  ylab("Relative abundance (%)\n")+
+  xlab("\nCherry flower-visiting insect groups")+
+  
+  theme_classic()+
+  theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust=1))+
+  scale_x_discrete(limits = c ("Honeybees", "Bombus", "Other_Wildbees", "Flies", "Other.insects"),
+                   labels = c ("Honeybees", "Bumblebees", "Other wild bees", "Flies", "Other insects")) +
+  scale_y_continuous(limits = c(0,1), labels = c(0, 25, 50, 75, 100)))
+
+ggsave("Rel_abundance_allinsects.png", width = 5, height = 3.5, dpi = 300)
+
+
+# SUPPLEMENTARY FIGURE S2 - ALL BEE GENERA GROUPED BY FAMILY
+
+ggplot(data=elongation_beegenus, aes(y = rel_abundance, x = Group, col = Sweet.sour)) +
+  geom_point(alpha = 0.8,
+             position = position_jitter(width = 0.15, height = 0.01), size = 2.5) +
+  scale_color_manual(values = c("darkorange", "red4"))+
+  stat_summary(fun.min = function(z) { mean(z) - (sd(z)/sqrt(length(z))) },
+               fun.max = function(z) { mean(z) + (sd(z)/sqrt(length(z))) },
+               fun = mean,size =0.3,
+               col = "black", position = position_dodge(width = 0.75)) +
+  facet_grid2( . ~ family, scales = "free_x", space = "free_x")+
+  ylab("Relative abundance (%)\n")+
+  xlab("\nCherry flower-visiting wild bee genera")+
+  theme_classic()+
+  theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust=1))+
+  theme(strip.text.x = element_text(size=8, angle=90))
+
+ggsave("Rel_abundance_beegenus_devided.png", width = 5, height = 3.5, dpi = 300)
+
+# SUBSET DATA - KEEP ONLY GENERA ABOUT 5% RELATIVE ABUNDANCE
+
+genus_subset <- filter(elongation_beegenus, Group %in% c("Andrena", "Bombus", "Lasioglossum", "Osmia"))
+
+# FIGURE 5B
+
+(Rel_ab_genus <- ggplot(data=genus_subset, aes(y = rel_abundance, x = Group, col = Sweet.sour)) +
+  geom_point(alpha = 0.8,
+             position = position_jitter(width = 0.15, height = 0.01), size = 2.5) +
+  scale_color_manual(values = c("darkorange", "red4"))+
+  stat_summary(fun.min = function(z) { mean(z) - (sd(z)/sqrt(length(z))) },
+               fun.max = function(z) { mean(z) + (sd(z)/sqrt(length(z))) },
+               fun = mean,size =0.3,
+               col = "black", position = position_dodge(width = 0.75)) +
+  facet_grid2( . ~ family, scales = "free_x", space = "free_x")+
+  ylab("Relative abundance (%)\n")+
+  xlab("\nCherry flower-visiting wild bee genera")+
+  theme_classic()+
+  theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust=1))+
+  theme(strip.text.x = element_text(size=8, angle=90))+
+    scale_y_continuous(labels = c(0, 25, 50, 75, 100)))
+
+ggsave("Rel_abundance_beegenus_subset.png", width = 5, height = 3.5, dpi = 300)
+
+(Rel_ab_genus <- ggplot(data=genus_subset, aes(y = rel_abundance, x = Group, col = Sweet.sour)) +
+    geom_point(alpha = 0.5,
+               position = position_jitter(width = 0.15, height = 0.01), size = 2.5) +
+    scale_color_manual(values = c("darkorange", "red4"))+
+    stat_summary(fun.min = function(z) { mean(z) - (sd(z)/sqrt(length(z))) },
+                 fun.max = function(z) { mean(z) + (sd(z)/sqrt(length(z))) },
+                 fun = mean,size =0.3,
+                 col = "black", position = position_dodge(width = 0.75)) +
+    ylab("Relative abundance (%)\n")+
+    xlab("\nCherry flower-visiting wild bee genera")+
+    theme_classic()+
+    theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust=1))+
+    theme(strip.text.x = element_text(size=8, angle=90))+
+    scale_y_continuous(limits = c(0, 1), labels = c(0, 25, 50, 75, 100))+
+    scale_x_discrete(labels = c("Andrena", "Bombus", "   Lasioglossum", "Osmia")))
+
+# COMBINE FIG 5A and FIG 5B
+library("ggpubr")
+library("cowplot")
+
+ggarrange(Rel_abund_all, Rel_ab_genus, labels=c("A", "B"))
+
+ggsave("Rel_abundance_joined.png", width = 5, height = 3.5, dpi = 300)
+
+# SUPPLEMENTARY FIGURE S3 - SPECIES RICHNESS
+
+ggplot(data=Data_richness, aes(y = Number_species, x = Family)) +
+  geom_bar(position = position_dodge(), stat = "identity", colour = "black", fill = "grey") +
+  facet_grid2( . ~ Order, scales = "free_x", space = "free_x")+
+  ylab("Number of species\n")+
+  xlab("\nInsect families")+
+  theme_classic()+
+  theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust=1))+
+  theme(strip.text.x = element_text(size=8, angle=90))
+
+ggsave("Flower_visior_richness.png", width = 5, height = 3.5, dpi = 300)
 
