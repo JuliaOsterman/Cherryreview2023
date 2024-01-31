@@ -1,1 +1,37 @@
+#######################################
+
+
+# LOAD DATA
+
+hives <- read.csv("hives.csv", sep = ";")
+
+
+# LOAD PACKAGES
+library(ggplot2)
+
+# FUNCTIONS
+std.error<-function(x) sd(x)/sqrt(length(x))
+
+
+(Hives <- ggplot(hives, aes(y = Hives, col = Crop,
+                  x = factor(Nest_type, level = c('Honeybee hive', 'Bumblebee box')))) +
+  geom_point(alpha = 0.5,
+             position = position_jitter(width = 0.2, height = 0.01), size = 3) +
+    scale_color_manual(values = c("darkorange", "red4"))+
+  stat_summary(fun = mean, geom = "pointrange", size =0.4,
+               fun.max = function(x) mean(x) + sd(x) / sqrt(length(x)),
+               fun.min = function(x) mean(x) - sd(x) / sqrt(length(x)),
+               col = "black", position = position_dodge(width = 0.75))+
+  ylab("Mean number of hives/boxes per ha\n")+   xlab("\nNest type")+
+  theme_classic() + ## ggtitle ("Nest type") +
+  theme(legend.position="none")+
+  scale_y_continuous(limits=c(0,14),breaks=seq(0, 14, 2))+
+  theme(legend.position="none",axis.text.x = element_text(hjust=0.5)))
+
+ggsave("Hives.png", width = 4, height = 3, dpi = 300)
+
+tapply(hives$Hives,hives$Nest_type,mean)
+tapply(hives$Hives,hives$Nest_type,std.error)
+
+
 
