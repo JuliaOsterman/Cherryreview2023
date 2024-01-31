@@ -1,0 +1,14 @@
+;Study_ID;Publishing_year;Sampling_year;Region;Sweet/sour;Poll.survey.method;Honeybees;Bombus;Other_Wildbees;Other insects;Flies
+1;Holzschuh_etal_2012;2012;2008;Germany;Sweet;Insect nets -  transect;0.65;0.02;0.3;NA;0.03
+2;Pisman_etal_2022;2022;2019;Belgium ;Sweet;Insect nets -  transect;0.657;0.065;0.239;NA;0.038
+3;Mateos?Fierro_etal_2022 ;2022;2018-2019;UK;Sweet;Insect nets - focal;0.46;0.35;0.115;NA;0.08
+4;Ryder_etal_2019;2019;2015 and 2016;UK, North Herefordshire;Sweet;Insect net - transect;0.085;0.009;0.042;0.24;0.624
+5;Reilly_etal_2020_sweet;2020;2013-2015;USA (Washington);Sweet;Insect net - transect;0.661;0.246;0.005;NA;0.088
+6;Reilly_etal_2020_sour;2020;2013-2015;USA (Michigan, Pennsylvania);Sour;Insect net - transect;0.52;0.024;0.391;0.007;0.056
+7;Eeraerts_etal_2019;2019;2016-2017;Belgium;Sweet;Insect net - focal;0.81;0.113;0.048;NA;0.003
+8;Eeraerts_etal_2017;2017;2015;Belgium;Sweet;Insect net - focal;0.689;0.153;0.086;NA;0.076
+9;Wood_etal_2018;2018;2013-2017;USA, Michigan;Sour;Observational - transect;0.491;0.024;0.485;NA;NA
+10;Mateos?Fierro_etal_2023;2023;2017-2019;UK;Sweet;Insect nets -  transect;0.493;0.44;0.019;NA;0.049
+11;Osterman_etal_2023;2023;2020;Germany;Sweet;Observational - transect;0.702;0.031;0.067;0.007;0.034
+12;Bakshi_etal_2018;2018;2014-2015;India;Sweet;Observational - focal;0.667;NA;0.068;0.034;0.231
+13;Sharma_etal_2016;2016;2015;India;Sweet;Observational - Scan;0.582;NA;0.026;0.093;0.298
