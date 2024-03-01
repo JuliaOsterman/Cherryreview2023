@@ -1,0 +1,101 @@
+Study_ID;Publishing_year;Sampling_year;Country;Sweet/sour;Included;Poll.taxa;Poll.eff.beh;Poll.serv.lim;Poll.req_intrinsic;Poll.req_environment;HB_vs_WP;Landscape;Management
+Lane 1979;1979;NA;Canada;Sweet;2;0;0;1;1;0;0;0;0
+Guerrero-Prieto et al. 1985;1985;1982-1984;USA;Sweet;1;0;0;0;0;1;0;0;0
+Postweiler et al. 1985;1985;NA;Germany;Sweet;1;0;0;0;0;1;0;0;0
+Lansari & Iezzoni, 1990;1990;NA;USA;Sweet/sour;1;0;0;0;1;0;0;0;0
+Cerovic & Ruzic 1992;1992;1985-1986;NA;Sour;3;0;0;1;1;1;0;0;0
+NyÇki et al. 1992;1992;1988-1990;Hungary;Sour;1;0;0;0;1;0;0;0;0
+Naumann et al., 1994;1994;1992;Canada;Sweet;1;0;0;0;0;0;0;0;1
+Beppu et al. 1996;1997;NA;Japan;Sweet;1;0;0;0;0;1;0;0;0
+Hormaza & Herrero, 1999;1999;NA;Spain;Sweet;1;0;0;0;1;0;0;0;0
+Yamane et al. 2000;2000;1997-1998;Japan;Sweet;1;0;0;0;1;0;0;0;0
+Choi and Andersen, 2001;2001;1995-1999;USA;Sweet;2;0;0;0;1;1;0;0;0
+Choi et al. 2002;2002;NA;USA;Sweet;1;0;0;0;1;0;0;0;0
+Hauck et al. 2002;2002;Not mentioned;USA;Sweet/sour;1;0;0;0;1;0;0;0;0
+Pirlak 2002;2002;1998;Turkey;Sweet;1;0;0;0;0;1;0;0;0
+Zhou et al. 2002;2002;1998-2000;Canada;Sweet;1;0;0;0;1;0;0;0;0
+Hedhly et al. 2003;2003;NA;Spain;Sweet;1;0;0;0;0;1;0;0;0
+NyÇki et al. 2003;2003;Not mentioned;Hungary;Sour;1;0;0;0;1;0;0;0;0
+BÇkefi 2004;2004;1999 and 2001;Hungary;Sweet;1;0;0;0;1;0;0;0;0
+Granger 2004;2004;2000;Australia;Sweet;1;0;0;0;1;0;0;0;0
+Hedhley et al., 2004;2004;NA;Spain;Sweet;1;0;0;0;0;1;0;0;0
+Wunsch & Hormaza, 2004;2004;NA;Spain;Sweet;1;0;0;0;1;0;0;0;0
+Hedhly et al., 2005;2005;NA;Spain;Sweet;2;0;0;0;1;1;0;0;0
+Bosch et al. 2006;2006;1998-2003;USA;Sweet;2;0;0;0;0;0;1;0;1
+Dekova & Blanke 2007;2007;2006;Germany;Sweet;1;0;0;0;0;0;0;0;1
+Hamm et al. 2007;2007;2006;Germany;Sweet;1;0;0;0;0;0;0;0;1
+Hedhly et al. 2007;2007;NA (2 years);Spain;Sweet;1;0;0;0;0;1;0;0;0
+Mert & Soylu, 2007;2007;Not mentioned;Turkey;Sweet;1;0;0;1;0;0;0;0;0
+Tepedino et al. 2007;2007;2004;USA;Sweet;1;1;0;0;0;0;0;0;0
+Tosun & Koyuncu, 2007;2007;NA;Turkey;Sweet;1;0;0;0;1;0;0;0;0
+Lech et al., 2008;2008;2003-2008;Poland;Sweet;1;0;0;0;1;0;0;0;0
+Beyhan & Karakas, 2009;2009;2003-2005;Turkey;Sweet;3;0;0;1;1;1;0;0;0
+Ganji-Moghadam et al. 2009;2009;2006-2007;Iran;Sweet;2;0;0;1;1;0;0;0;0
+Sebolt and Iezzoni, 2009;2009;NA;USA;Sweet/sour;1;0;0;0;1;0;0;0;0
+Ansari et al 2010;2010;2005-2006;Iran;Sour;2;0;0;1;1;0;0;0;0
+Davarynejad et al 2010;2010;2008-2009;Hungary;Sour;2;0;0;1;1;0;0;0;0
+Davarynejad et al 2010b;2010;Not mentioned;Hungary;Sour;1;0;0;0;1;0;0;0;0
+Li et al. 2010;2010;2007-2008;China;Sweet;1;0;0;0;0;1;0;0;0
+Wang 2010;2010;NA;China;Sweet;1;0;0;0;1;0;0;0;0
+Sutyemez 2011;2011;2008;Turkey;Sweet;2;0;0;1;1;0;0;0;0
+Holzschuh et al. 2012;2012;2008;Germany;Sweet;5;1;0;1;0;0;1;1;1
+Kwack et al., 2012;2012;NA;South Korea;Sweet;2;1;1;0;0;0;0;0;0
+Zhang & Whiting, 2012;2012;2009;USA;Sweet;2;0;0;0;1;1;0;0;0
+Biddinger et al., 2013;2013;2011;USA;Sour;1;0;0;0;0;0;0;0;1
+Guler et al., 2013;2013;2008-2009;Turkey;Sweet;1;1;0;0;0;0;0;0;0
+Radicevic et al. 2013;2013;2008-2010;Serbia;Sweet;1;0;0;0;1;0;0;0;0
+Radicevic et al., 2013;2013;1999-2006;Serbia;Sweet;1;0;0;0;1;0;0;0;0
+Cachi and Wunsch, 2014;2014;NA;Spain;Sweet;1;0;0;0;1;0;0;0;0
+Cachi et al. 2014;2014;NA;Spain;Sweet;1;0;0;0;1;0;0;0;0
+Irenaeus & Mitra, 2014;2014;2013;India;Sweet/sour;2;0;0;0;1;1;0;0;0
+GÅler et al. 2015;2015;2007-2009;Turkey;Sweet;1;1;0;0;0;0;0;0;0
+Hansted et al. 2015;2015;2009-2010;Denmark;Sour;1;0;0;1;0;0;0;0;0
+Hedhly et al. 2016;2016;NA;Spain;Sweet;1;0;0;0;1;0;0;0;0
+Radicevic et al. 2016;2016;2008-2010;Serbia;Sweet;3;0;0;1;1;1;0;0;0
+Sharma et al., 2016;2016;2015;India;Sweet;2;1;1;0;0;0;0;0;0
+Boyle & Pitts-Singer 2017;2017;2016;USA;Sour;1;0;0;0;0;0;0;0;1
+Christmann et al, 2017;2017;2013-2014;Uzbekistan;Sour;1;0;0;0;0;0;0;0;1
+Eeraerts et al. 2017;2017;2015;Belgium;Sweet;3;1;0;0;0;0;1;1;0
+Gibbs et al., 2017;2017;2014-2016;USA;Sour;1;1;0;0;0;0;0;0;0
+Raduni? et al. 2017;2017;Not mentioned;Croatia;Sweet;2;0;0;1;1;0;0;0;0
+Bakshi et al., 2018;2018;2014-2015;India;Sweet;2;1;1;0;0;0;0;0;0
+Dar et al. 2018;2018;2013-2014;India;Sweet;2;1;1;0;0;0;0;0;0
+Sergeevna et al., 2018;2018;2017;Ukraine;Sweet;2;1;1;0;0;0;0;0;0
+Williamson et al. 2018;2018;2012, 2013, 2014;USA;Sour;1;0;0;0;0;0;0;0;1
+Wood et al. 2018;2018;2013-2017;USA;Sour;2;1;0;0;0;0;0;0;1
+Zhang et al. 2018;2018;2011;USA;Sweet;1;0;0;0;0;1;0;0;0
+Blanco et al., 2019;2019;2017-2018;Chile;Sweet;2;0;0;0;0;1;0;0;1
+Boyle & Pitts-Singer 2019;2019;2017-2018;USA;Sour;1;0;0;0;0;0;0;0;1
+Dziedzic et al. 2019;2019;Not mentioned;Poland;Sweet;1;0;0;0;0;1;0;0;0
+Eeraerts et al. 2019;2019;2016-2017;Belgium;Sweet;4;1;0;0;0;0;1;1;1
+Ryder et al. 2019;2019;2015 and 2016;UK;Sweet;1;1;0;0;0;0;0;0;0
+Salehabidi et aL. 2019;2019;2014-2016;Iran;Sweet;1;0;0;0;1;0;0;0;0
+Eeraerts et al. 2020a;2020;2018-2019;Belgium;Sweet;1;0;1;0;0;0;0;0;0
+Eeraerts et al. 2020b;2020;2017;Belgium;Sweet;1;0;1;0;0;0;0;0;0
+Eeraerts et al., 2020c;2020;2020;Belgium;Sweet;1;0;0;0;0;0;0;0;1
+Graham et al. 2020;2020;2018-2019;USA;Sour;1;0;0;0;0;0;0;0;1
+GÅler 2020;2020;2014-2016;Turkey;Sweet;1;0;0;0;0;0;0;0;1
+Kay et al. 2020;2020;NA;Switzerland;Sweet;1;0;0;0;0;0;0;1;0
+Paltineanu $ Chitu 2020;2020;1969-2018;Romania;Sweet/sour;1;0;0;0;0;1;0;0;0
+Reilly et al., 2020 (sour);2020;2013-2015;USA;Sweet/sour;4;1;1;1;0;0;1;0;0
+Rosas-Ramos et al. 2020;2020;2015;Spain;Sweet;2;1;0;0;0;0;0;0;1
+Ariza et al. 2021;2021;2019;Belgium;Sweet;1;0;0;0;0;0;0;1;0
+Eeraerts et al. 2021a;2021;2019;Belgium;Sweet;2;0;0;0;0;0;0;1;1
+Eeraerts et al., 2021b;2021;2017-2018;Belgium;Sweet;2;1;0;0;0;0;0;1;0
+Kuivila et al. 2021;2021;2016;USA;Sweet;1;0;0;0;0;0;0;0;1
+Radicevic et al. 2021;2021;2016-2017;Serbia;Sour;3;0;0;1;1;1;0;0;0
+Eeraerts 2022;2022;2020;Belgium;Sweet;1;1;0;0;0;0;0;0;0
+Eeraerts et al., 2022;2022;2020;Belgium;Sweet;2;0;0;0;0;0;0;1;1
+Eyles et al. 2022;2022;NA, review;NA, review;Sweet;1;0;0;0;0;0;0;0;1
+Gilpin et al. 2022b;2022;2018-2020;Australia;Sweet;1;0;0;0;0;0;0;0;1
+Gilpin et al., 2022a;2022;2017-2019;Australia;Sweet;3;1;0;0;0;0;0;1;1
+Hamroud et al. 2022;2022;2019 and 2020;Marocco;Sweet;2;1;0;0;0;0;0;0;1
+Mateos?Fierro et al. 2022 ;2022;2018-2019;UK;Sweet;2;1;1;0;0;0;0;0;0
+Piri et al. 2022;2022;2011;Iran;Sweet;1;0;0;0;1;0;0;0;0
+Pisman et al. 2022;2022;2019;Belgium;Sweet;3;1;0;0;0;0;1;1;0
+Eeraerts, 2023;2023;2015-2017;Belgium;Sweet;1;0;0;0;0;0;0;1;0
+Mateos?Fierro et al. 2023;2023;2017-2019;UK;Sweet;4;1;0;1;0;0;1;0;1
+Osterman et al. 2023;2023;2020;Germany;Sweet;4;1;0;1;0;0;1;0;1
+Perkins et al., 2023;2023;2016-2017;USA;Sour;1;0;0;0;0;0;0;0;1
+Salvadores and Bastias, 2023;2023;NA, review;NA, review;Sweet;2;0;0;0;0;1;0;0;1
+Xu et al. 2023;2023;2019-2020;Canada;Sweet;3;0;0;1;0;1;0;0;1
