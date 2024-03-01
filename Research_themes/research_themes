@@ -1,1 +1,36 @@
+Data_overview <- read.csv("Cherry_summary_table_sixrschemes.csv", sep = ";")
 
+Theme_long <- gather(Data_overview, Theme, Included,                           # in this order: data frame, key, value
+                          c(7:12))        # we need to specify which columns to gather
+pdf <- Theme_long %>% group_by(Theme) %>% mutate(cs = cumsum(Included))
+
+write.csv(pdf, "Cumm_researchthemes.csv")
+
+
+ggplot(pdf, aes(x= Publishing_year, y=cs, colour = Theme)) + geom_line(size = 1.25) + 
+  ylab("Cumulative number of publications\n")+
+  xlab("\nYear")+
+  labs(color="Research themes")+
+  scale_color_manual(values = c("#fde725", "#7ad151FF", "#22A884FF", "#2A788EFF", "#414487FF", "#440154FF"),
+                     breaks = c("Poll.req_intrinsic", "Poll.serv.lim", "Poll.taxa", "HB_vs_WP", "Landscape", "Management"),
+                     labels=c("Pollination requirements",  "Pollination service and pollen limitation", "Pollinators and their pollination performance", "Importance of pollinator visitation", "Influence of the surrounding landscape", "On-farm management practices"))+
+  theme_classic()
+
+ggsave("Cumm_research_themes_lines_viri.png", width = 7, height = 3.5, dpi = 300)
+
+
+#######Count the number of publications per country
+
+Country.summary <- Data_overview %>%                   
+  group_by(Country) %>%    
+  tally()
+
+Overall.summary <- Data_overview %>%                   
+  tally()
+
+
+#########Count by cherry type
+
+Cherry.summary <- Data_overview %>%                   
+  group_by(Sweet.sour) %>%    
+  tally()   
