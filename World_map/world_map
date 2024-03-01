@@ -1,1 +1,85 @@
+world <- map_data("world")
+Summary_table <- read.csv("Cherry_summary_table_final.csv", sep = ";")
+
+##Summarize the number of studies per country
+Cherry.summary <- Data_overview %>%                   
+  group_by(Country) %>%    
+  tally() 
+
+Cherry.summary <- Cherry.summary[-c(14,26),] ####excluding NA and reviews
+##join with middle points
+Points <- read.csv("Country_points.csv", sep = ";")
+
+Cherry_joined <- left_join( Points,Cherry.summary, by = c("region" = "Country"))
+choose_colour = c(rep("1", 26))
+Cherry_joined$choose_colour = choose_colour
+
+##############################
+###Do the same but keeping all of Europe as Germany
+#############################3
+
+Summary_table_EU <- read.csv("Cherry_summary_table_final_EU.csv", sep = ";")
+
+##Summarize the number of studies per country
+Cherry.summary.EU <- Summary_table_EU %>%                   
+  group_by(Country) %>%    
+  tally() 
+
+Cherry.summary.EU <- Cherry.summary.EU[-c(10,15),]
+##join with middle points
+Points <- read.csv("Country_points.csv", sep = ";")
+
+Cherry_joined_EU <- left_join( Points,Cherry.summary.EU, by = c("region" = "Country"))
+
+##########get data on cherry harvest in tonnes (from 2021)
+
+world <- map_data("world")
+
+Data_harvest <- read.csv("FAOSTAT_data_en_11-20-2023.csv", sep = ";")
+
+World_joined <- left_join(world, Data_harvest, by = c("region" = "Area"))
+
+World_joined$Scale <- cut(World_joined$Value,breaks = c(0,1, 5001, 10001, 50001, 100001, 700001),labels = c (1,2,3,4,5,6), right = FALSE)
+
+World_joined$Scale <- as.factor(World_joined$Scale)
+
+####Map with studies per country
+
+ggplot(World_joined, aes(map_id = region)) +
+  geom_map(
+    aes(fill = Scale), 
+    data = World_joined,
+    map = World_joined, 
+    color = "black", size = 0.1) +
+  theme_void() +
+  theme(legend.position = "right") +
+  expand_limits(x = World_joined$long, y = World_joined$lat) +
+  scale_fill_manual(values= c("grey90", "grey75", "grey60", "grey44", "grey20", "grey0"), na.value="transparent",
+                    labels =c("0", "1-5000" , "5001-10000", "10001-50000", "50001-100000" ,">100000") )+
+  labs(fill= "Harvest \nin tonnes")+
+  geom_point(data = Cherry_joined,
+             aes(long, lat, size=n, colour = "darkred"),
+             alpha = 0.90)
+
+ggsave("MAP_all_countries.jpeg", width = 13, height = 7, dpi = 300)
+
+
+####Map with studies with one for Europe
+ggplot(World_joined, aes(map_id = region)) +
+  geom_map(
+    aes(fill = Scale), 
+    data = World_joined,
+    map = World_joined, 
+    color = "black", size = 0.1) +
+  theme_void() +
+  theme(legend.position = "right") +
+  expand_limits(x = World_joined$long, y = World_joined$lat) +
+  scale_fill_manual(values= c("grey90", "grey75", "grey60", "grey44", "grey20", "grey0"), na.value="transparent",
+                    labels =c("0", "1-5000" , "5001-10000", "10001-50000", "50001-100000" ,">100000") )+
+  labs(fill= "Harvest \nin tonnes")+
+  geom_point(data = Cherry_joined_EU,
+             aes(long, lat, size=n, colour = "darkred"),
+             alpha = 0.90)
+
+ggsave("MAP_one_EU.jpeg", width = 6.5, height = 3.5, dpi = 300)
 
